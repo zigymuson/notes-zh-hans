@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="zh-hans">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>麻将胡了 · 知识型介绍页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Georgia, 'Noto Serif SC', 'Source Han Serif SC', serif;
+      background: #faf6f0;
+      color: #2f2e2b;
+      line-height: 1.75;
+      padding: 2rem 1.5rem;
+    }
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      background: #fffcf9;
+      border-radius: 32px;
+      padding: 3rem 2.2rem;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.03), 0 1px 2px rgba(0,0,0,0.02);
+    }
+    h1 {
+      font-weight: 450;
+      font-size: 2.2rem;
+      letter-spacing: 0.02em;
+      color: #3d3a34;
+      border-left: 6px solid #b8966f;
+      padding-left: 1.2rem;
+      margin-bottom: 1.8rem;
+    }
+    .opening {
+      font-size: 1.08rem;
+      background: #f4ede4;
+      padding: 1.2rem 1.6rem;
+      border-radius: 20px;
+      margin-bottom: 2rem;
+      color: #3e3a33;
+      font-style: normal;
+      box-shadow: inset 0 1px 4px rgba(0,0,0,0.02);
+    }
+    .opening strong {
+      font-weight: 550;
+      color: #7b5f42;
+    }
+    p {
+      margin-bottom: 1.4rem;
+      text-align: justify;
+    }
+    .inset-quote {
+      background: #f8f2ea;
+      border-left: 5px solid #c9ad8a;
+      padding: 1rem 1.6rem;
+      margin: 1.8rem 0;
+      border-radius: 0 14px 14px 0;
+      font-size: 0.98rem;
+      color: #43403b;
+    }
+    .inset-quote::before {
+      content: "📎 延伸 · ";
+      font-weight: 500;
+      color: #6b5b4a;
+    }
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 2rem 0 1.6rem;
+    }
+    .feature-item {
+      flex: 1 1 200px;
+      background: #fff9f2;
+      border: 1px solid #e5d9cc;
+      border-radius: 24px;
+      padding: 1.4rem 1.2rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.01);
+      transition: 0.2s ease;
+    }
+    .feature-item:hover {
+      background: #f6efe7;
+      border-color: #cbb59b;
+    }
+    .feature-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: #5c4f3d;
+      margin-bottom: 0.5rem;
+      border-bottom: 1px dashed #dacfc1;
+      padding-bottom: 0.4rem;
+    }
+    .feature-item p {
+      font-size: 0.92rem;
+      margin-bottom: 0;
+      color: #4d4740;
+    }
+    .scenario {
+      background: #efe8de;
+      border-radius: 24px;
+      padding: 1.6rem 1.8rem;
+      margin: 2rem 0 1.6rem;
+    }
+    .scenario p:last-child {
+      margin-bottom: 0;
+    }
+    .faq-mini {
+      margin-top: 2.4rem;
+      border-top: 1px solid #e0d4c6;
+      padding-top: 1.6rem;
+    }
+    .faq-mini details {
+      margin-bottom: 0.8rem;
+      background: #fdfaf5;
+      border-radius: 18px;
+      padding: 0.6rem 1.4rem;
+      border: 1px solid #e8ddd0;
+    }
+    .faq-mini summary {
+      font-weight: 500;
+      cursor: pointer;
+      color: #3d3932;
+      padding: 0.2rem 0;
+    }
+    .faq-mini details[open] summary {
+      color: #7a6249;
+    }
+    .faq-mini details p {
+      font-size: 0.95rem;
+      margin: 0.6rem 0 0.2rem;
+      padding-left: 0.2rem;
+    }
+    .gentle-closing {
+      margin-top: 2.6rem;
+      text-align: center;
+      font-size: 0.98rem;
+      background: #f3ede5;
+      padding: 1.4rem 1.8rem;
+      border-radius: 40px;
+      color: #3e3a34;
+    }
+    .gentle-closing a {
+      color: #6d5136;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: #c3aa8e;
+      font-weight: 450;
+    }
+    .gentle-closing a:hover {
+      color: #8f6d4b;
+      text-decoration-color: #8f6d4b;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #e6dbcd;
+      margin: 2.2rem 0 1.2rem;
+    }
+    @media (max-width: 540px) {
+      .page {
+        padding: 2rem 1.2rem;
+      }
+      h1 {
+        font-size: 1.8rem;
+        padding-left: 0.8rem;
+      }
+      .feature-grid {
+        flex-direction: column;
+      }
+      .feature-item {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <h1>麻将胡了 · 查询与对照笔记</h1>
+
+    <div class="opening">
+      <strong>胡牌，不只是一声吆喝。</strong> 每一个组合的背后，都藏着牌张的排列逻辑、番种计算与地域习惯。日常查阅时，最需要的就是一份经得起对照的参考。
+    </div>
+
+    <p>
+      不论是刚接触国标麻将的新手，还是想厘清不同规则的玩家，面对“胡牌牌型”“番值表”“花牌计算”等内容时，往往要同时打开好几个页面才能拼凑出完整信息。<a href="https://zh-hans-mahjong.com">麻将胡了</a> 正是为此而整理的持续型资料站——不堆砌术语，而是把最常见的查询场景逐一拆解。从清一色、七对、十三幺到地方番种，每一条都附有牌面示例和计番说明，方便直接对照手牌。
+    </p>
+
+    <div class="inset-quote">
+      例如“平和”这一基础番种，不同规则下对“有吃无碰”“门前清”的要求略有出入。查阅时如果只看单一定义，很容易忽略细节。多版本对照能帮你更快定位差异。
+    </div>
+
+    <p>
+      麻将规则体系庞杂，但日常对局中频繁用到的知识点其实相对集中。下面整理了四个常用切入角度，适合在复盘、学习或整理笔记时参考。
+    </p>
+
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>番种速览</h3>
+        <p>国标 81 个番种按难度与番值排列，并标注常见变体。适合快速判断手牌可能达到的番数区间。</p>
+      </div>
+      <div class="feature-item">
+        <h3>牌型图例</h3>
+        <p>不只文字描述，每一类胡牌牌型都配有示意图或序列举例，减少“只可意会”的模糊感。</p>
+      </div>
+      <div class="feature-item">
+        <h3>规则差异</h3>
+        <p>日本麻将、广东麻将、成都麻将等主流玩法之间的番种、起胡、计番方式对照，避免混淆。</p>
+      </div>
+      <div class="feature-item">
+        <h3>延伸阅读</h3>
+        <p>每篇条目末尾附有相关术语链或进阶话题，便于顺着兴趣继续翻阅，形成自然的知识延伸。</p>
+      </div>
+    </div>
+
+    <div class="scenario">
+      <p><strong>一个典型场景：</strong> 你在复盘时发现一副牌既符合“全不靠”又接近“五门齐”，但不确定是否可叠加。此时直接在站内搜索两个番种，各自的定义、互斥说明以及常见判例都会并排呈现。比起翻书或零散问答，这种整合式的对照更节省精力。</p>
+    </div>
+
+    <p>
+      除了番种与牌型，花牌、百搭牌、连风、包牌等辅助概念也常成为查询盲区。站内把这些“边角内容”单独整理成短篇笔记，方便在遇到具体局面时快速定位，而不必通读全文。内容保持克制，不刻意渲染“必胜”“秘籍”，只陈述规则本身与常见理解。
+    </p>
+
+    <div class="faq-mini">
+      <details>
+        <summary>FAQ · 常见疑问摘要</summary>
+        <p><strong>Q：</strong> 为什么不同规则里同一番种的番值不一样？<br><strong>A：</strong> 番值本质是规则约定。国标、日本麻将、地方规则各自有独立的番种表与分值体系，站内会明确标注每条内容对应的规则背景。</p>
+        <p><strong>Q：</strong> 牌型图例是用文字还是图片展示？<br><strong>A：</strong> 目前以文字序列 + 简表为主，例如「🀇🀇🀇🀈🀉🀊🀋🀌🀍🀎🀏🀏🀏」配合注释，清晰且加载快。</p>
+        <p><strong>Q：</strong> 内容更新频率如何？<br><strong>A：</strong> 不定期根据新规则或玩家反馈补充条目，保持信息有效。不会有频繁推送。</p>
+      </details>
+    </div>
+
+    <hr>
+
+    <div class="gentle-closing">
+      翻阅即是对照的开始。无论是查一个番种、比一条规则，还是单纯想梳理自己对麻将的理解，<a href="https://zh-hans-mahjong.com">麻将胡了</a> 都愿意成为你书签栏里安静的那一页。
+    </div>
+
+  </div>
+</body>
+</html>
